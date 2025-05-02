@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!-- You might have a <group> element here -->
+    <!-- Add or modify items like these: -->
+
+    <item
+        android:id="@+id/navigation_chat"
+        android:icon="@drawable/ic_baseline_chat_24" <!-- Replace with your desired icon -->
+    android:title="@string/menu_chat" /> <!-- Use appropriate string resource -->
+    <item
+        android:id="@+id/navigation_call"
+        android:icon="@drawable/ic_baseline_call_24" <!-- Replace icon -->
+    android:title="@string/menu_call" /> <!-- Use appropriate string resource -->
+    <item
+        android:id="@+id/navigation_memories"
+        android:icon="@drawable/ic_baseline_memory_24" <!-- Replace icon -->
+    android:title="@string/menu_memories" /> <!-- Use appropriate string resource -->
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_baseline_settings_24" <!-- Replace icon -->
+    android:title="@string/menu_settings" /> <!-- Use appropriate string resource -->
+
+    <!-- Keep other existing menu items if needed -->
+
+</menu>

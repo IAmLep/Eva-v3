@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_chat"> <!-- Or your desired start destination -->
+
+    <!-- Existing Chat Fragment -->
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.example.evav3.ui.chat.ChatFragment"
+        android:label="@string/title_chat" <!-- Make sure you have this string resource -->
+    tools:layout="@layout/fragment_chat" />
+
+    <!-- Add Call Fragment -->
+    <fragment
+        android:id="@+id/navigation_call"
+        android:name="com.example.evav3.ui.call.CallFragment"
+        android:label="@string/title_call" <!-- Add this string resource -->
+    tools:layout="@layout/fragment_call" />
+
+    <!-- Add Memories Fragment -->
+    <fragment
+        android:id="@+id/navigation_memories"
+        android:name="com.example.evav3.ui.memories.MemoriesFragment"
+        android:label="@string/title_memories" <!-- Add this string resource -->
+    tools:layout="@layout/fragment_memories" />
+
+    <!-- Add Settings Fragment -->
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.evav3.ui.settings.SettingsFragment"
+        android:label="@string/title_settings" <!-- Add this string resource -->
+    tools:layout="@layout/fragment_settings" />
+
+</navigation>
