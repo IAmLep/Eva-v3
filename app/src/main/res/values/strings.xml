@@ -1,28 +1,21 @@
 <resources>
-    <!-- Default App Name -->
-    <string name="app_name">EvaV3</string> <!-- Or your app's name -->
-
-    <!-- Navigation Drawer Menu Items -->
+    <!-- Original App Strings -->
+    <string name="app_name">EvaV3</string>
     <string name="menu_chat">Chat</string>
     <string name="menu_call">Call</string>
     <string name="menu_conversations">Conversations</string>
     <string name="menu_memories">Memories</string>
     <string name="menu_settings">Settings</string>
-
-    <!-- Navigation Drawer Header -->
-    <string name="nav_header_title">Eva V3</string> <!-- Or your app's name/title -->
-    <string name="nav_header_subtitle">Your AI Companion</string> <!-- Or a relevant subtitle -->
+    <string name="nav_header_title">Eva V3</string>
+    <string name="nav_header_subtitle">Your AI Companion</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="title_chat">Chat</string>
     <string name="title_call">Call</string>
     <string name="title_memories">Memories</string>
     <string name="title_settings">Settings</string>
 
-    <!-- Toolbar titles (can be same as menu items) -->
-    <!-- You might already have these defined if you used Android Studio templates -->
-    <!-- If not, add them. The labels in nav_graph.xml use these. -->
-    <!-- <string name="title_activity_main">MainActivity</string> --> <!-- Example if needed -->
-
-    <!-- Add other strings your app needs here -->
+    <!-- Widget Strings -->
+    <string name="call_widget_description">Widget to start or stop Eva call.</string>
+    <string name="widget_toggle_call_description">Toggle Eva call</string>
 
 </resources>

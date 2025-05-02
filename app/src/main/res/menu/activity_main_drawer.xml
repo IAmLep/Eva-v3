@@ -8,20 +8,20 @@
 
     <item
         android:id="@+id/navigation_chat"
-        android:icon="@drawable/ic_baseline_chat_24" <!-- Replace with your desired icon -->
-    android:title="@string/menu_chat" /> <!-- Use appropriate string resource -->
+        android:icon="@drawable/ic_menu_camera"
+    android:title="@string/menu_chat" />
     <item
         android:id="@+id/navigation_call"
-        android:icon="@drawable/ic_baseline_call_24" <!-- Replace icon -->
-    android:title="@string/menu_call" /> <!-- Use appropriate string resource -->
+        android:icon="@drawable/ic_menu_camera"
+    android:title="@string/menu_call" />
     <item
         android:id="@+id/navigation_memories"
-        android:icon="@drawable/ic_baseline_memory_24" <!-- Replace icon -->
-    android:title="@string/menu_memories" /> <!-- Use appropriate string resource -->
+        android:icon="@drawable/ic_menu_camera"
+    android:title="@string/menu_memories" />
     <item
         android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_baseline_settings_24" <!-- Replace icon -->
-    android:title="@string/menu_settings" /> <!-- Use appropriate string resource -->
+        android:icon="@drawable/ic_menu_camera"
+    android:title="@string/menu_settings" />
 
     <!-- Keep other existing menu items if needed -->
 

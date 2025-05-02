@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/message_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp">
 
-    <!-- TextView for the message text -->
+    <!-- This TextView will display the message -->
     <TextView
-        android:id="@+id/text_message_body"
+        android:id="@+id/messageTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_chat_bubble_received"
+        android:layout_gravity="start"
+        android:background="@drawable/message_bubble_background_user"
         android:padding="12dp"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="16sp"
-        tools:text="This is a sample message." />
+        tools:text="This is a sample message text that might wrap."
+        />
 
-    <!-- TextView for the timestamp -->
-    <TextView
-        android:id="@+id/text_message_timestamp"
+    <!-- Optional: Add a timestamp TextView below if desired -->
+    <!-- <TextView
+        android:id="@+id/timestampTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-    android:layout_marginTop="4dp"
-    android:textSize="10sp"
-    android:textColor="@android:color/darker_gray"
-    tools:text="10:30 AM" />
+        android:layout_gravity="start"  Default gravity
+        android:textSize="10sp"
+        android:layout_marginTop="2dp"
+        tools:text="10:30 AM" /> -->
 
 </LinearLayout>

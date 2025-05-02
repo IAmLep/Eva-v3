@@ -1,6 +1,7 @@
 package com.example.evav3.di
 
-import com.example.evav3.network.ApiService
+import com.example.evav3.data.remote.AuthInterceptor // Assuming this file exists as previously defined
+import com.example.evav3.data.remote.api.ConversationApi // Assuming this file exists as previously defined
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -11,37 +12,39 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class) // Provides dependencies for the entire application lifecycle
+@InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    // Base URL for your backend API
-    // IMPORTANT: Replace with your actual backend URL (e.g., Cloud Run URL)
-    // Make sure it ends with a '/'
-    private const val BASE_URL = "http://10.0.2.2:8000/api/v1/conversation/" // Example for local emulator
+    // Your backend Base URL
+    private const val BASE_URL = "https://eva-backend-533306620971.europe-west1.run.app/" // Ensure trailing slash
 
     @Provides
     @Singleton
-    fun provideGson(): Gson {
-        // Configure Gson if needed (e.g., date formats, custom type adapters)
-        return GsonBuilder().create()
+    fun provideGson(): Gson = GsonBuilder().create()
+
+    @Provides
+    @Singleton
+    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
+        // Use Level.NONE or Level.BASIC for production
+        return HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
     }
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
-        // Add logging interceptor for debugging network requests (optional)
-        val loggingInterceptor = HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY // Log request/response body
-        }
-
+    fun provideOkHttpClient(
+        loggingInterceptor: HttpLoggingInterceptor,
+        authInterceptor: AuthInterceptor // Inject the AuthInterceptor
+    ): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(loggingInterceptor) // Add the interceptor
-            // Add other configurations like timeouts, authenticators if needed
-            // .connectTimeout(30, TimeUnit.SECONDS)
-            // .readTimeout(30, TimeUnit.SECONDS)
+            .addInterceptor(loggingInterceptor)
+            .addInterceptor(authInterceptor) // Add the AuthInterceptor
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
             .build()
     }
 
@@ -50,15 +53,15 @@ object NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient, gson: Gson): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .client(okHttpClient) // Use the custom OkHttpClient
-            .addConverterFactory(GsonConverterFactory.create(gson)) // Use Gson for JSON parsing
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
 
+    // Provide your API services here
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): ApiService {
-        // Create the ApiService implementation using Retrofit
-        return retrofit.create(ApiService::class.java)
+    fun provideConversationApi(retrofit: Retrofit): ConversationApi {
+        return retrofit.create(ConversationApi::class.java)
     }
 }
