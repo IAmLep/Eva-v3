@@ -1,7 +1,8 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    kotlin("kapt") // Kotlin Annotation Processing Tool
+    // kotlin("kapt") // <-- REMOVED Kapt plugin
+    id("com.google.devtools.ksp") // <-- ADDED KSP plugin
     id("com.google.gms.google-services") // Firebase services
     id("dagger.hilt.android.plugin") // Hilt dependency injection
 }
@@ -98,12 +99,14 @@ dependencies {
 
     // Hilt (Dependency Injection)
     implementation("com.google.dagger:hilt-android:$hilt_version")
-    kapt("com.google.dagger:hilt-compiler:$hilt_version")
+    // kapt("com.google.dagger:hilt-compiler:$hilt_version") // <-- CHANGED from kapt
+    ksp("com.google.dagger:hilt-compiler:$hilt_version")    // <-- to ksp
 
     // Room (Persistence Library)
     implementation("androidx.room:room-runtime:$room_version")
     implementation("androidx.room:room-ktx:$room_version") // Kotlin Extensions and Coroutines support
-    kapt("androidx.room:room-compiler:$room_version")     // Annotation processor using Kapt
+    // kapt("androidx.room:room-compiler:$room_version")     // <-- CHANGED from kapt
+    // ksp("androidx.room:room-compiler:$room_version")        // <-- to ksp
 
     // Timber (Logging)
     implementation("com.jakewharton.timber:timber:$timber_version")
@@ -114,7 +117,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
 
-// Kapt configuration
-kapt {
-    correctErrorTypes = true
-}
+// Kapt configuration - REMOVED
+// kapt {
+//     correctErrorTypes = true
+// }
