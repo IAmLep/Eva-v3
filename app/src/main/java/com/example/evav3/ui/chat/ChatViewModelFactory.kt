@@ -2,7 +2,7 @@ package com.example.evav3.ui.chat
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.evav3.data.ChatRepository
+import com.example.evav3.data.repository.ChatRepository
 import com.example.evav3.data.SimulatedChatRepository
 
 /**

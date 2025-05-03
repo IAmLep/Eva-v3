@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "533306620971",
+    "project_id": "eva-ai-454545",
+    "storage_bucket": "eva-ai-454545.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533306620971:android:7a4cae59ce3c4898bcbe6e",
+        "android_client_info": {
+          "package_name": "com.example.evav3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALC-dh2Yx_qffUIQawW43YYgt5sOyLeD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
