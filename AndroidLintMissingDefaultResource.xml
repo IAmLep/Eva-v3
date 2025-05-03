@@ -1,0 +1,41 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/values-land/dimens.xml</file>
+  <line>2</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/values-land/dimens.xml" />
+  <problem_class id="AndroidLintMissingDefaultResource" severity="ERROR" attribute_key="ERRORS_ATTRIBUTES">Missing Default</problem_class>
+  <hints />
+  <description>&lt;html&gt;The dimen &quot;fab_margin&quot; in values-land has no declaration in the base &lt;code&gt;values&lt;/code&gt; folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier&lt;/html&gt;</description>
+  <highlighted_element>name=&quot;fab_margin&quot;</highlighted_element>
+  <language>XML</language>
+  <offset>11</offset>
+  <length>17</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/values-w1240dp/dimens.xml</file>
+  <line>2</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/values-w1240dp/dimens.xml" />
+  <problem_class id="AndroidLintMissingDefaultResource" severity="ERROR" attribute_key="ERRORS_ATTRIBUTES">Missing Default</problem_class>
+  <hints />
+  <description>&lt;html&gt;The dimen &quot;fab_margin&quot; in values-w1240dp has no declaration in the base &lt;code&gt;values&lt;/code&gt; folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier&lt;/html&gt;</description>
+  <highlighted_element>name=&quot;fab_margin&quot;</highlighted_element>
+  <language>XML</language>
+  <offset>11</offset>
+  <length>17</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/values-w600dp/dimens.xml</file>
+  <line>2</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/values-w600dp/dimens.xml" />
+  <problem_class id="AndroidLintMissingDefaultResource" severity="ERROR" attribute_key="ERRORS_ATTRIBUTES">Missing Default</problem_class>
+  <hints />
+  <description>&lt;html&gt;The dimen &quot;fab_margin&quot; in values-w600dp has no declaration in the base &lt;code&gt;values&lt;/code&gt; folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier&lt;/html&gt;</description>
+  <highlighted_element>name=&quot;fab_margin&quot;</highlighted_element>
+  <language>XML</language>
+  <offset>11</offset>
+  <length>17</length>
+</problem>
+</problems>

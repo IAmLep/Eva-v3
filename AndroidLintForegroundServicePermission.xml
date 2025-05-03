@@ -1,0 +1,28 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml</file>
+  <line>35</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+  <problem_class id="AndroidLintForegroundServicePermission" severity="ERROR" attribute_key="ERRORS_ATTRIBUTES">Missing permissions required by foregroundServiceType</problem_class>
+  <hints />
+  <description>&lt;html&gt;foregroundServiceType:dataSync requires permission:[android.permission.FOREGROUND_SERVICE_DATA_SYNC]&lt;/html&gt;</description>
+  <highlighted_element>&lt;service android:name=&quot;.services.CallService&quot; android:foregroundServiceType=...</highlighted_element>
+  <language>XML</language>
+  <offset>8</offset>
+  <length>161</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml</file>
+  <line>35</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+  <problem_class id="AndroidLintForegroundServicePermission" severity="ERROR" attribute_key="ERRORS_ATTRIBUTES">Missing permissions required by foregroundServiceType</problem_class>
+  <hints />
+  <description>&lt;html&gt;foregroundServiceType:microphone requires permission:[android.permission.FOREGROUND_SERVICE_MICROPHONE] AND any permission in list:[android.permission.CAPTURE_AUDIO_HOTWORD, android.permission.CAPTURE_AUDIO_OUTPUT, android.permission.CAPTURE_MEDIA_OUTPUT, android.permission.CAPTURE_TUNER_AUDIO_INPUT, android.permission.CAPTURE_VOICE_COMMUNICATION_OUTPUT, android.permission.RECORD_AUDIO]&lt;/html&gt;</description>
+  <highlighted_element>&lt;service android:name=&quot;.services.CallService&quot; android:foregroundServiceType=...</highlighted_element>
+  <language>XML</language>
+  <offset>8</offset>
+  <length>161</length>
+</problem>
+</problems>

@@ -1,0 +1,146 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml</file>
+  <line>36</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+  <problem_class id="AndroidDomInspection" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Android Resources Validation</problem_class>
+  <description>Unresolved package 'services'</description>
+  <highlighted_element>services</highlighted_element>
+  <language>XML</language>
+  <offset>27</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml</file>
+  <line>36</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+  <problem_class id="AndroidDomInspection" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Android Resources Validation</problem_class>
+  <description>Unresolved class 'CallService'</description>
+  <highlighted_element>CallService</highlighted_element>
+  <language>XML</language>
+  <offset>36</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml</file>
+  <line>41</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+  <problem_class id="AndroidDomInspection" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Android Resources Validation</problem_class>
+  <description>Unresolved package 'widgets'</description>
+  <highlighted_element>widgets</highlighted_element>
+  <language>XML</language>
+  <offset>27</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml</file>
+  <line>41</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+  <problem_class id="AndroidDomInspection" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Android Resources Validation</problem_class>
+  <description>Unresolved class 'CallWidgetProvider'</description>
+  <highlighted_element>CallWidgetProvider</highlighted_element>
+  <language>XML</language>
+  <offset>35</offset>
+  <length>18</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/fragment_conversations.xml</file>
+  <line>7</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_conversations.xml" />
+  <problem_class id="AndroidDomInspection" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Android Resources Validation</problem_class>
+  <description>Unresolved package 'conversations'</description>
+  <highlighted_element>conversations</highlighted_element>
+  <language>XML</language>
+  <offset>23</offset>
+  <length>13</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/fragment_conversations.xml</file>
+  <line>7</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_conversations.xml" />
+  <problem_class id="AndroidDomInspection" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Android Resources Validation</problem_class>
+  <description>Unresolved class 'ConversationsFragment'</description>
+  <highlighted_element>ConversationsFragment</highlighted_element>
+  <language>XML</language>
+  <offset>37</offset>
+  <length>21</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/fragment_gallery.xml</file>
+  <line>7</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_gallery.xml" />
+  <problem_class id="AndroidDomInspection" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Android Resources Validation</problem_class>
+  <description>Unresolved package 'gallery'</description>
+  <highlighted_element>gallery</highlighted_element>
+  <language>XML</language>
+  <offset>23</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/fragment_gallery.xml</file>
+  <line>7</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_gallery.xml" />
+  <problem_class id="AndroidDomInspection" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Android Resources Validation</problem_class>
+  <description>Unresolved class 'GalleryFragment'</description>
+  <highlighted_element>GalleryFragment</highlighted_element>
+  <language>XML</language>
+  <offset>31</offset>
+  <length>15</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml</file>
+  <line>7</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
+  <problem_class id="AndroidDomInspection" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Android Resources Validation</problem_class>
+  <description>Unresolved package 'home'</description>
+  <highlighted_element>home</highlighted_element>
+  <language>XML</language>
+  <offset>23</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml</file>
+  <line>7</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
+  <problem_class id="AndroidDomInspection" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Android Resources Validation</problem_class>
+  <description>Unresolved class 'HomeFragment'</description>
+  <highlighted_element>HomeFragment</highlighted_element>
+  <language>XML</language>
+  <offset>28</offset>
+  <length>12</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml</file>
+  <line>7</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml" />
+  <problem_class id="AndroidDomInspection" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Android Resources Validation</problem_class>
+  <description>Unresolved package 'slideshow'</description>
+  <highlighted_element>slideshow</highlighted_element>
+  <language>XML</language>
+  <offset>23</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml</file>
+  <line>7</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_slideshow.xml" />
+  <problem_class id="AndroidDomInspection" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">Android Resources Validation</problem_class>
+  <description>Unresolved class 'SlideshowFragment'</description>
+  <highlighted_element>SlideshowFragment</highlighted_element>
+  <language>XML</language>
+  <offset>33</offset>
+  <length>17</length>
+</problem>
+</problems>

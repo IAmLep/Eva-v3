@@ -1,0 +1,342 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/EvaApplication.kt</file>
+  <line>9</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3</package>
+  <entry_point TYPE="class" FQNAME="com.example.evav3.EvaApplication" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>3</length>
+  <highlighted_element>/**</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is not instantiated.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/MainActivity.kt</file>
+  <line>20</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3</package>
+  <entry_point TYPE="class" FQNAME="com.example.evav3.MainActivity" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>18</length>
+  <highlighted_element>@AndroidEntryPoint</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is not instantiated.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/MainActivity.kt</file>
+  <line>23</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3</package>
+  <entry_point TYPE="field" FQNAME="com.example.evav3.MainActivity firebaseAuth" />
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>47</length>
+  <highlighted_element>@Inject lateinit var firebaseAuth: FirebaseAuth</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Field is never assigned.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/data/remote/AuthInterceptor.kt</file>
+  <line>13</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.data.remote</package>
+  <entry_point TYPE="method" FQNAME="com.example.evav3.data.remote.AuthInterceptor AuthInterceptor(com.example.evav3.data.repository.AuthRepository authRepository)" />
+  <language>kotlin</language>
+  <offset>22</offset>
+  <length>20</length>
+  <highlighted_element>@Inject constructor(</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Constructor is never used.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/data/repository/AuthRepository.kt</file>
+  <line>11</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.data.repository</package>
+  <entry_point TYPE="method" FQNAME="com.example.evav3.data.repository.AuthRepository AuthRepository(com.google.firebase.auth.FirebaseAuth firebaseAuth)" />
+  <language>kotlin</language>
+  <offset>21</offset>
+  <length>20</length>
+  <highlighted_element>@Inject constructor(</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Constructor is never used.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/data/repository/ConversationRepository.kt</file>
+  <line>14</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.data.repository</package>
+  <entry_point TYPE="method" FQNAME="com.example.evav3.data.repository.ConversationRepository ConversationRepository(com.example.evav3.data.remote.api.ConversationApi conversationApi)" />
+  <language>kotlin</language>
+  <offset>29</offset>
+  <length>20</length>
+  <highlighted_element>@Inject constructor(</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Constructor is never used.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/di/FirebaseModule.kt</file>
+  <line>10</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.di</package>
+  <entry_point TYPE="class" FQNAME="com.example.evav3.di.FirebaseModule" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>7</length>
+  <highlighted_element>@Module</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is never used.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/di/FirebaseModule.kt</file>
+  <line>14</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.di</package>
+  <entry_point TYPE="method" FQNAME="com.example.evav3.di.FirebaseModule com.google.firebase.auth.FirebaseAuth provideFirebaseAuth()" />
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>9</length>
+  <highlighted_element>@Provides</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Method is never used.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/di/NetworkModule.kt</file>
+  <line>18</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.di</package>
+  <entry_point TYPE="class" FQNAME="com.example.evav3.di.NetworkModule" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>7</length>
+  <highlighted_element>@Module</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is never used.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/di/NetworkModule.kt</file>
+  <line>25</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.di</package>
+  <entry_point TYPE="method" FQNAME="com.example.evav3.di.NetworkModule com.google.gson.Gson provideGson()" />
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>9</length>
+  <highlighted_element>@Provides</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Method is never used.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/di/NetworkModule.kt</file>
+  <line>29</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.di</package>
+  <entry_point TYPE="method" FQNAME="com.example.evav3.di.NetworkModule okhttp3.logging.HttpLoggingInterceptor provideHttpLoggingInterceptor()" />
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>9</length>
+  <highlighted_element>@Provides</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Method is never used.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/di/NetworkModule.kt</file>
+  <line>36</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.di</package>
+  <entry_point TYPE="method" FQNAME="com.example.evav3.di.NetworkModule okhttp3.OkHttpClient provideOkHttpClient(okhttp3.logging.HttpLoggingInterceptor loggingInterceptor, com.example.evav3.data.remote.AuthInterceptor authInterceptor)" />
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>9</length>
+  <highlighted_element>@Provides</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Method is never used.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/di/NetworkModule.kt</file>
+  <line>51</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.di</package>
+  <entry_point TYPE="method" FQNAME="com.example.evav3.di.NetworkModule retrofit2.Retrofit provideRetrofit(okhttp3.OkHttpClient okHttpClient, com.google.gson.Gson gson)" />
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>9</length>
+  <highlighted_element>@Provides</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Method is never used.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/di/NetworkModule.kt</file>
+  <line>61</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.di</package>
+  <entry_point TYPE="method" FQNAME="com.example.evav3.di.NetworkModule com.example.evav3.data.remote.api.ConversationApi provideConversationApi(retrofit2.Retrofit retrofit)" />
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>33</length>
+  <highlighted_element>// Provide your API services here</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Method is never used.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/service/CallService.kt</file>
+  <line>15</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.service</package>
+  <entry_point TYPE="class" FQNAME="com.example.evav3.service.CallService" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>31</length>
+  <highlighted_element>class CallService : Service() {</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is not instantiated.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/ui/MainViewModel.kt</file>
+  <line>16</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.ui</package>
+  <entry_point TYPE="method" FQNAME="com.example.evav3.ui.MainViewModel MainViewModel(com.example.evav3.data.repository.ConversationRepository conversationRepository)" />
+  <language>kotlin</language>
+  <offset>20</offset>
+  <length>20</length>
+  <highlighted_element>@Inject constructor(</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Constructor is never used.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/ui/call/CallFragment.kt</file>
+  <line>11</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.ui.call</package>
+  <entry_point TYPE="class" FQNAME="com.example.evav3.ui.call.CallFragment" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>51</length>
+  <highlighted_element>@AndroidEntryPoint // For Hilt dependency injection</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is not instantiated.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/ui/chat/ChatFragment.kt</file>
+  <line>11</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.ui.chat</package>
+  <entry_point TYPE="class" FQNAME="com.example.evav3.ui.chat.ChatFragment" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>51</length>
+  <highlighted_element>@AndroidEntryPoint // For Hilt dependency injection</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is not instantiated.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/ui/memories/MemoriesFragment.kt</file>
+  <line>11</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.ui.memories</package>
+  <entry_point TYPE="class" FQNAME="com.example.evav3.ui.memories.MemoriesFragment" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>51</length>
+  <highlighted_element>@AndroidEntryPoint // For Hilt dependency injection</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is not instantiated.</description>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/ui/settings/SettingsFragment.kt</file>
+  <line>11</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.ui.settings</package>
+  <entry_point TYPE="class" FQNAME="com.example.evav3.ui.settings.SettingsFragment" />
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>51</length>
+  <highlighted_element>@AndroidEntryPoint // For Hilt dependency injection</highlighted_element>
+  <problem_class id="" severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+  <hints>
+    <hint value="comment" />
+    <hint value="delete" />
+  </hints>
+  <description>Class is not instantiated.</description>
+</problem>
+</problems>

@@ -1,0 +1,67 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/data/repository/ConversationRepository.kt</file>
+  <line>6</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.data.repository</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/data/repository/ConversationRepository.kt" />
+  <problem_class id="KotlinUnusedImport" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused import directive</problem_class>
+  <description>Unused import directive</description>
+  <highlighted_element>import com.example.evav3.utils.Result // A simple wrapper class for results</highlighted_element>
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>75</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/service/CallService.kt</file>
+  <line>12</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.service</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/service/CallService.kt" />
+  <problem_class id="KotlinUnusedImport" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused import directive</problem_class>
+  <description>Unused import directive</description>
+  <highlighted_element>import com.google.firebase.firestore.FirebaseFirestore</highlighted_element>
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>54</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/ui/ChatAdapter.kt</file>
+  <line>12</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.ui</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/ui/ChatAdapter.kt" />
+  <problem_class id="KotlinUnusedImport" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused import directive</problem_class>
+  <description>Unused import directive</description>
+  <highlighted_element>import com.example.evav3.data.model.ChatMessage</highlighted_element>
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>47</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/ui/MainViewModel.kt</file>
+  <line>7</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.ui</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/ui/MainViewModel.kt" />
+  <problem_class id="KotlinUnusedImport" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused import directive</problem_class>
+  <description>Unused import directive</description>
+  <highlighted_element>import com.example.evav3.data.model.ChatMessage // Create this data class</highlighted_element>
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>73</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/ui/MainViewModel.kt</file>
+  <line>9</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.ui</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/ui/MainViewModel.kt" />
+  <problem_class id="KotlinUnusedImport" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused import directive</problem_class>
+  <description>Unused import directive</description>
+  <highlighted_element>import com.example.evav3.utils.Result // Import the Result wrapper</highlighted_element>
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>66</length>
+</problem>
+</problems>

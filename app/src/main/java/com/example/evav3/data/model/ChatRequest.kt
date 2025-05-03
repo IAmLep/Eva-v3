@@ -1,4 +1,4 @@
-package com.example.evav3.model
+package com.example.evav3.data.model
 
 data class ChatRequest(
     val message: String

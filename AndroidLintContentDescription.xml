@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml</file>
+  <line>25</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" />
+  <problem_class id="AndroidLintContentDescription" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Image without contentDescription</problem_class>
+  <hints />
+  <description>&lt;html&gt;Missing &lt;code&gt;contentDescription&lt;/code&gt; attribute on image&lt;/html&gt;</description>
+  <highlighted_element>com.google.android.material.floatingactionbutton.FloatingActionButton</highlighted_element>
+  <language>XML</language>
+  <offset>5</offset>
+  <length>69</length>
+</problem>
+</problems>

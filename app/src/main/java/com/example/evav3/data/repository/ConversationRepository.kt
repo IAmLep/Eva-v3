@@ -1,56 +1,32 @@
 package com.example.evav3.data.repository
 
-import com.example.evav3.data.remote.api.ConversationApi
-import com.example.evav3.data.remote.dto.ConversationRequest
-import com.example.evav3.data.remote.dto.ConversationResponse
-import com.example.evav3.utils.Result // A simple wrapper class for results
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import timber.log.Timber
-import javax.inject.Inject
-import javax.inject.Singleton
+import com.example.evav3.data.model.Conversation
+import kotlinx.coroutines.flow.Flow
 
-@Singleton
-class ConversationRepository @Inject constructor(
-    private val conversationApi: ConversationApi
-    // Inject AuthRepository ONLY IF you need the token explicitly here,
-    // otherwise the Interceptor handles it automatically.
-    // private val authRepository: AuthRepository
-) {
+/**
+ * Interface defining the contract for managing Conversation data.
+ * Implementations will handle fetching and manipulating conversations from a data source (e.g., local database, remote API).
+ */
+interface ConversationRepository {
 
-    suspend fun sendMessage(message: String, sessionId: String?): Result<ConversationResponse> {
-        // Execute network call on IO dispatcher
-        return withContext(Dispatchers.IO) {
-            try {
-                val request = ConversationRequest(message = message, sessionId = sessionId)
-                Timber.d("Sending message: %s, Session ID: %s", message, sessionId)
-                val response = conversationApi.sendMessage(request)
+    /**
+     * Retrieves all conversations as a Flow, typically ordered by recency.
+     * The Flow allows observing changes to the conversation list over time.
+     * @return A Flow emitting a list of all Conversations.
+     */
+    fun getAllConversations(): Flow<List<Conversation>>
 
-                if (response.isSuccessful) {
-                    val body = response.body()
-                    if (body != null) {
-                        Timber.d("Received successful response: %s", body)
-                        Result.Success(body)
-                    } else {
-                        Timber.e("API call successful but response body is null. Code: %d", response.code())
-                        Result.Error("Empty response from server")
-                    }
-                } else {
-                    val errorBody = response.errorBody()?.string() ?: "Unknown error"
-                    Timber.e("API call failed. Code: %d, Error: %s", response.code(), errorBody)
-                    // You might want to parse the errorBody if it's structured (e.g., JSON)
-                    Result.Error("Error ${response.code()}: $errorBody")
-                }
-            } catch (e: Exception) {
-                Timber.e(e, "Network or unexpected error during sendMessage")
-                Result.Error("Network error: ${e.message ?: "Unknown"}")
-            }
-        }
-    }
-}
+    /**
+     * Inserts a new conversation or updates an existing one in the data source.
+     * This is a suspending function, intended to be called from a coroutine scope.
+     * @param conversation The conversation object to insert or update.
+     */
+    suspend fun insertConversation(conversation: Conversation)
 
-// Helper Result class (place in a 'utils' package)
-sealed class Result<out T> {
-    data class Success<out T>(val data: T) : Result<T>()
-    data class Error(val message: String, val exception: Exception? = null) : Result<Nothing>()
+    /**
+     * Deletes a specific conversation from the data source.
+     * This is a suspending function, intended to be called from a coroutine scope.
+     * @param conversation The conversation object to delete.
+     */
+    suspend fun deleteConversation(conversation: Conversation)
 }

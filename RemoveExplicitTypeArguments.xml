@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/ui/MainViewModel.kt</file>
+  <line>23</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.ui</package>
+  <entry_point TYPE="field" FQNAME="com.example.evav3.ui.MainViewModel _isLoading" />
+  <problem_class id="RemoveExplicitTypeArguments" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Unnecessary type argument</problem_class>
+  <description>Remove explicit type arguments</description>
+  <highlighted_element>&lt;Boolean&gt;</highlighted_element>
+  <language>kotlin</language>
+  <offset>44</offset>
+  <length>9</length>
+</problem>
+</problems>

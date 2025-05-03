@@ -1,0 +1,232 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml</file>
+  <line>49</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'wiget'</description>
+  <highlighted_element>wiget</highlighted_element>
+  <language>XML</language>
+  <offset>44</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/service/CallService.kt</file>
+  <line>20</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.service</package>
+  <entry_point TYPE="field" FQNAME="com.example.evav3.service.CallService ACTION_END_CALL" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>kotlin</language>
+  <offset>50</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/service/CallService.kt</file>
+  <line>109</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.service</package>
+  <entry_point TYPE="method" FQNAME="com.example.evav3.service.CallService boolean toggleMute()" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'unmute'</description>
+  <highlighted_element>unmute</highlighted_element>
+  <language>kotlin</language>
+  <offset>31</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_call_widget_icon.xml</file>
+  <line>10</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_call_widget_icon.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_call_widget_icon.xml</file>
+  <line>16</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_call_widget_icon.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_call_widget_icon.xml</file>
+  <line>22</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_call_widget_icon.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_call_widget_icon.xml</file>
+  <line>28</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_call_widget_icon.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_widget_preview.xml</file>
+  <line>10</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_widget_preview.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_widget_preview.xml</file>
+  <line>16</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_widget_preview.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_widget_preview.xml</file>
+  <line>22</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_widget_preview.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable/ic_widget_preview.xml</file>
+  <line>28</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_widget_preview.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/widget_call_layout.xml</file>
+  <line>10</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/widget_call_layout.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/widget_call_layout.xml</file>
+  <line>16</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/widget_call_layout.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/widget_call_layout.xml</file>
+  <line>22</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/widget_call_layout.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/layout/widget_call_layout.xml</file>
+  <line>28</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/widget_call_layout.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml</file>
+  <line>10</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml</file>
+  <line>16</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml</file>
+  <line>22</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml</file>
+  <line>28</line>
+  <module>Eva_v3.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Typo</problem_class>
+  <description>Typo: In word 'evav'</description>
+  <highlighted_element>evav</highlighted_element>
+  <language>XML</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+</problems>

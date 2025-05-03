@@ -4,25 +4,29 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.evav3.network.ConversationResponse
-import com.example.evav3.repository.ConversationRepository
+// Import ChatRepository and ChatResponse (assuming ChatResponse is the correct model)
+import com.example.evav3.data.model.ChatResponse // Or ConversationResponse if that's truly what ApiService returns
+import com.example.evav3.data.repository.ChatRepository // <-- Import ChatRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /**
- * ViewModel for managing conversation data and interactions.
- * It communicates with the ConversationRepository to send messages
+ * ViewModel for managing *sending* chat messages and observing responses.
+ * It communicates with the ChatRepository to send messages
  * and exposes the results to the UI via LiveData.
  */
 @HiltViewModel
 class ConversationViewModel @Inject constructor(
-    private val repository: ConversationRepository
+    private val chatRepository: ChatRepository // <-- Inject ChatRepository
+    // If you also need local conversation data:
+    // private val conversationRepository: ConversationRepository
 ) : ViewModel() {
 
-    // LiveData to hold the latest successful conversation response
-    private val _conversationResponse = MutableLiveData<ConversationResponse>()
-    val conversationResponse: LiveData<ConversationResponse> = _conversationResponse
+    // LiveData to hold the latest successful chat response
+    // Check if ChatResponse or ConversationResponse is the correct model returned by your API
+    private val _chatResponse = MutableLiveData<ChatResponse>()
+    val chatResponse: LiveData<ChatResponse> = _chatResponse
 
     // LiveData to hold any error messages
     private val _error = MutableLiveData<String>()
@@ -33,79 +37,59 @@ class ConversationViewModel @Inject constructor(
     val isLoading: LiveData<Boolean> = _isLoading
 
     // Variable to hold the current session ID (can be updated)
+    // Consider if session ID management belongs here or should be handled differently
     private var currentSessionId: String? = null
 
     /**
-     * Sends a message to the backend via the repository.
+     * Sends a message to the backend via the ChatRepository.
      * Updates LiveData based on the success or failure of the call.
      *
      * @param message The message text to send.
      * @param metadata Optional metadata for the request.
      */
     fun sendMessage(message: String, metadata: Map<String, Any>? = null) {
-        // Don't send empty messages
         if (message.isBlank()) {
             _error.value = "Message cannot be empty."
             return
         }
 
-        _isLoading.value = true // Indicate loading state
+        _isLoading.value = true
 
-        // Launch a coroutine in the ViewModel's scope
         viewModelScope.launch {
             try {
-                // Call the repository's suspend function
-                val response = repository.sendMessage(
+                // Call the ChatRepository's suspend function
+                // Ensure sendMessage in ChatRepository/Impl matches these parameters
+                val response: ChatResponse = chatRepository.sendMessage(
                     message = message,
-                    sessionId = currentSessionId, // Use the current session ID
+                    sessionId = currentSessionId,
                     metadata = metadata
                 )
 
-                if (response.isSuccessful && response.body() != null) {
-                    val conversationData = response.body()!!
-                    if (conversationData.error == null) {
-                        // Success: Update response LiveData and store the new session ID
-                        _conversationResponse.value = conversationData
-                        currentSessionId = conversationData.sessionId // Update session ID for next message
-                    } else {
-                        // Handle backend-specific error message
-                        _error.value = "API Error: ${conversationData.error}"
-                    }
+                // Assuming ChatResponse has 'error' and 'sessionId' fields
+                // Adjust logic based on your actual ChatResponse structure
+                if (response.error == null) {
+                    _chatResponse.value = response
+                    currentSessionId = response.sessionId // Update session ID if applicable
                 } else {
-                    // Handle network or HTTP error
-                    _error.value = "Error: ${response.code()} - ${response.message()}"
+                    _error.value = "API Error: ${response.error}"
                 }
+
             } catch (e: Exception) {
-                // Handle exceptions (e.g., network issues)
                 _error.value = "Exception: ${e.message ?: "Unknown error"}"
             } finally {
-                _isLoading.value = false // Reset loading state
+                _isLoading.value = false
             }
         }
     }
 
-    /**
-     * Clears the current session ID, effectively starting a new conversation
-     * on the next message send.
-     */
     fun startNewSession() {
         currentSessionId = null
-        // Optionally clear previous responses or errors from LiveData
-        // _conversationResponse.value = null
-        // _error.value = null
     }
 
-    /**
-     * Sets a specific session ID to continue an existing conversation.
-     * @param sessionId The ID of the session to resume.
-     */
     fun setSessionId(sessionId: String?) {
         currentSessionId = sessionId
     }
 
-    /**
-     * Gets the current session ID being used by the ViewModel.
-     */
     fun getCurrentSessionId(): String? {
         return currentSessionId
     }

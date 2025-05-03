@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/data/model/ChatRequest.kt</file>
+  <line>1</line>
+  <module>Eva_v3.app.main</module>
+  <package>com.example.evav3.model</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/example/evav3/data/model/ChatRequest.kt" />
+  <problem_class id="PackageDirectoryMismatch" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Package name does not match containing directory</problem_class>
+  <description>Package directive does not match the file location</description>
+  <highlighted_element>package com.example.evav3.model</highlighted_element>
+  <language>kotlin</language>
+  <offset>0</offset>
+  <length>31</length>
+</problem>
+</problems>
