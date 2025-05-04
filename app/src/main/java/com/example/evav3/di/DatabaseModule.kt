@@ -3,7 +3,6 @@ package com.example.evav3.di
 import android.content.Context
 import androidx.room.Room
 import com.example.evav3.data.AppDatabase
-import com.example.evav3.data.dao.ConversationDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,45 +10,27 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
-/**
- * Hilt module for providing database-related dependencies (AppDatabase, DAOs).
- */
 @Module
-@InstallIn(SingletonComponent::class) // Scope dependencies to the application lifecycle
+@InstallIn(SingletonComponent::class)
 object DatabaseModule {
 
-    private const val DATABASE_NAME = "eva_database" // Constant for the database file name
-
-    /**
-     * Provides a singleton instance of the AppDatabase.
-     * @param appContext The application context provided by Hilt.
-     * @return The singleton AppDatabase instance.
-     */
     @Provides
     @Singleton
-    fun provideAppDatabase(@ApplicationContext appContext: Context): AppDatabase {
+    fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(
-            appContext,
+            context.applicationContext,
             AppDatabase::class.java,
-            DATABASE_NAME
-        )
-            // In development, you might add .fallbackToDestructiveMigration()
-            // to avoid crashes during schema changes, but this deletes all data.
-            // For production, implement proper migrations: .addMigrations(MIGRATION_1_2, ...)
+            "eva_database"
+        ).fallbackToDestructiveMigration() // Added fallback for simplicity during dev
             .build()
     }
 
-    /**
-     * Provides a singleton instance of the ConversationDao using the AppDatabase.
-     * @param appDatabase The AppDatabase instance provided by Hilt.
-     * @return The singleton ConversationDao instance.
-     */
+    // REMOVE THIS ENTIRE FUNCTION:
+    /*
     @Provides
-    @Singleton
-    fun provideConversationDao(appDatabase: AppDatabase): ConversationDao {
-        return appDatabase.conversationDao()
+    @Singleton // Providing the DAO explicitly is usually not needed when injecting it directly
+    fun provideConversationDao(database: AppDatabase): ConversationDao {
+        return database.conversationDao()
     }
-
-    // Add @Provides methods here for any other DAOs defined in AppDatabase
-    // e.g., @Provides @Singleton fun provideMessageDao(appDatabase: AppDatabase): MessageDao = appDatabase.messageDao()
+    */
 }

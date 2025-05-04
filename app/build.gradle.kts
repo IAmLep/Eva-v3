@@ -1,20 +1,20 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    // kotlin("kapt") // <-- REMOVED Kapt plugin
-    id("com.google.devtools.ksp") // <-- ADDED KSP plugin
-    id("com.google.gms.google-services") // Firebase services
-    id("dagger.hilt.android.plugin") // Hilt dependency injection
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp) // Correct alias from libs.versions.toml
+    alias(libs.plugins.hilt) // Correct alias from libs.versions.toml
+    alias(libs.plugins.google.services) // Correct alias from libs.versions.toml
+    // Consider adding kotlin-parcelize if needed: alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
     namespace = "com.example.evav3"
-    compileSdk = 34
+    compileSdk = 34 // Keep this updated
 
     defaultConfig {
         applicationId = "com.example.evav3"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 34 // Keep this updated
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -22,7 +22,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false // Consider enabling for release builds later
+            isMinifyEnabled = false // Enable for release: isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -31,93 +31,77 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        // Reference the javaVersion defined in libs.versions.toml
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.javaVersion.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.javaVersion.get())
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        // Reference the javaVersion defined in libs.versions.toml
+        jvmTarget = libs.versions.javaVersion.get()
     }
 
     buildFeatures {
-        viewBinding = true // Enables View Binding
+        viewBinding = true
+        // dataBinding = true // Enable if you use Data Binding
     }
 }
 
 dependencies {
-    // Define versions in one place
-    val room_version = "2.6.1"
-    val hilt_version = "2.51.1"
-    val lifecycle_version = "2.7.0"
-    val navigation_version = "2.7.7"
-    val coroutines_version = "1.7.3"
-    val firebase_bom_version = "32.8.0"
-    val retrofit_version = "2.9.0"
-    val okhttp_logging_version = "4.11.0"
-    val markwon_version = "4.6.2"
-    val timber_version = "5.0.1"
-
     // Core Android & Kotlin
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.activity:activity-ktx:1.8.2")
-    implementation("androidx.fragment:fragment-ktx:1.6.2")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material) // Correct alias
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.fragment.ktx)
 
-    // Lifecycle Components (ViewModel, LiveData)
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    // Lifecycle Components
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     // Navigation Component
-    implementation("androidx.navigation:navigation-fragment-ktx:$navigation_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$navigation_version")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
-    // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:$firebase_bom_version"))
-    implementation("com.google.firebase:firebase-firestore-ktx")
-    implementation("com.google.firebase:firebase-auth-ktx")
+    // Firebase (using BOM)
+    implementation(platform(libs.firebase.bom)) // Correct alias
+    implementation(libs.firebase.firestore.ktx) // Correct alias
+    implementation(libs.firebase.auth.ktx)    // Correct alias
 
-    // Networking (Retrofit, OkHttp)
-    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
-    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
-    implementation("com.squareup.okhttp3:logging-interceptor:$okhttp_logging_version")
+    // Networking
+    implementation(libs.retrofit.core) // Correct alias
+    implementation(libs.retrofit.converter.gson) // Correct alias
+    implementation(libs.okhttp.logging.interceptor) // Correct alias
 
-    // UI Components (RecyclerView, Markdown)
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
-    implementation("io.noties.markwon:core:$markwon_version")
-    implementation("io.noties.markwon:ext-strikethrough:$markwon_version")
-    implementation("io.noties.markwon:ext-tables:$markwon_version")
-    implementation("io.noties.markwon:html:$markwon_version")
+    // UI Components
+    implementation(libs.androidx.recyclerview) // Correct alias (added to libs.versions.toml)
+    implementation(libs.markwon.core)
+    implementation(libs.markwon.ext.strikethrough)
+    implementation(libs.markwon.ext.tables)
+    implementation(libs.markwon.html)
 
     // Security
-    implementation("androidx.security:security-crypto:1.1.0-alpha06") // Consider using a stable version if available
+    implementation(libs.androidx.security.crypto)
 
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
 
     // Hilt (Dependency Injection)
-    implementation("com.google.dagger:hilt-android:$hilt_version")
-    // kapt("com.google.dagger:hilt-compiler:$hilt_version") // <-- CHANGED from kapt
-    ksp("com.google.dagger:hilt-compiler:$hilt_version")    // <-- to ksp
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler) // Use ksp, correct alias
 
     // Room (Persistence Library)
-    implementation("androidx.room:room-runtime:$room_version")
-    implementation("androidx.room:room-ktx:$room_version") // Kotlin Extensions and Coroutines support
-    // kapt("androidx.room:room-compiler:$room_version")     // <-- CHANGED from kapt
-    // ksp("androidx.room:room-compiler:$room_version")        // <-- to ksp
+    implementation(libs.androidx.room.runtime) // Correct alias
+    implementation(libs.androidx.room.ktx)    // Correct alias
+    ksp(libs.androidx.room.compiler) // Use ksp, correct alias
 
     // Timber (Logging)
-    implementation("com.jakewharton.timber:timber:$timber_version")
+    implementation(libs.timber) // Correct alias (added to libs.versions.toml)
 
     // Testing
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit) // Correct alias
+    androidTestImplementation(libs.androidx.test.espresso.core) // Correct alias
 }
-
-// Kapt configuration - REMOVED
-// kapt {
-//     correctErrorTypes = true
-// }
