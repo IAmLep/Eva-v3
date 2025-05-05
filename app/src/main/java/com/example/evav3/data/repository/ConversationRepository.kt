@@ -1,6 +1,7 @@
 package com.example.evav3.data.repository
 
 import com.example.evav3.data.model.Conversation
+import com.example.evav3.data.remote.dto.ConversationResponse
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -29,4 +30,5 @@ interface ConversationRepository {
      * @param conversation The conversation object to delete.
      */
     suspend fun deleteConversation(conversation: Conversation)
+    suspend fun sendMessage(message: String, sessionId: String?): Result<ConversationResponse>
 }

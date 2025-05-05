@@ -4,17 +4,21 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.evav3.data.model.ChatMessage // Create this data class
-import com.example.evav3.data.repository.ConversationRepository
-import com.example.evav3.utils.Result // Import the Result wrapper
+import com.example.evav3.data.repository.ChatRepository // Correct repository
+import com.example.evav3.model.ChatMessage // Your UI model
+// Import the DTO from data.remote.dto
+import com.example.evav3.data.remote.dto.ConversationResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
+import kotlin.Result
+import java.util.Date
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val conversationRepository: ConversationRepository
+    private val chatRepository: ChatRepository
+    // private val conversationRepository: ConversationRepository // Keep if needed for local DB
 ) : ViewModel() {
 
     private val _messages = MutableLiveData<List<ChatMessage>>(emptyList())
@@ -26,13 +30,11 @@ class MainViewModel @Inject constructor(
     private val _error = MutableLiveData<String?>(null)
     val error: LiveData<String?> = _error
 
-    private var currentSessionId: String? = null
+    private var currentSessionId: String? = null // To be passed to repository
     private var isAuthenticated = false
 
-    // Called from Activity after anonymous sign-in succeeds
     fun onUserAuthenticated() {
         isAuthenticated = true
-        // Optionally load initial data or conversation history here
         Timber.i("ViewModel notified: User is authenticated.")
     }
 
@@ -42,32 +44,46 @@ class MainViewModel @Inject constructor(
             Timber.w("Attempted to send message before authentication completed.")
             return
         }
-        if (_isLoading.value == true) return // Prevent multiple simultaneous requests
+        if (_isLoading.value == true) return
 
-        val userMessage = ChatMessage(text = messageText, isUser = true, timestamp = System.currentTimeMillis())
+        val userMessage = ChatMessage(
+            text = messageText,
+            isSentByUser = true,
+            timestamp = Date()
+        )
         addMessageToList(userMessage)
 
         _isLoading.value = true
-        _error.value = null // Clear previous error
+        _error.value = null
 
         viewModelScope.launch {
-            when (val result = conversationRepository.sendMessage(messageText, currentSessionId)) {
-                is Result.Success -> {
-                    val response = result.data
-                    currentSessionId = response.sessionId // Update session ID
-                    val aiResponseText = response.response ?: "Empty response" // Handle null response
-                    val aiMessage = ChatMessage(text = aiResponseText, isUser = false, timestamp = System.currentTimeMillis())
-                    addMessageToList(aiMessage)
-                    Timber.d("AI Response added. New Session ID: %s", currentSessionId)
-                }
-                is Result.Error -> {
-                    Timber.e("Error sending message: %s", result.message)
-                    _error.value = "Error: ${result.message}"
-                    // Optional: Add an error message to the chat list?
-                    // addMessageToList(ChatMessage(text="Error: ${result.message}", isUser = false, isError = true))
-                }
-            }
+            // Call repository with message AND currentSessionId
+            val result = chatRepository.sendMessage(message = messageText, sessionId = currentSessionId) // <<< Pass sessionId
+
             _isLoading.value = false
+
+            result.fold(
+                onSuccess = { conversationResponse -> // <<< Expecting ConversationResponse
+                    // Update session ID from the response DTO
+                    currentSessionId = conversationResponse.sessionId
+                    Timber.d("Updated session ID to: %s", currentSessionId)
+
+                    // Use the 'response' field from the DTO (or adjust if your DTO field name is different)
+                    val aiResponseText = conversationResponse.response ?: "Empty response"
+
+                    val aiMessage = ChatMessage(
+                        text = aiResponseText, // <<< Use DTO's response field
+                        isSentByUser = false,
+                        timestamp = Date()
+                    )
+                    addMessageToList(aiMessage)
+                },
+                onFailure = { exception ->
+                    Timber.e(exception, "Error sending message")
+                    _error.value = "Error: ${exception.message ?: "Unknown network error"}"
+                    // Optionally add error to chat list
+                }
+            )
         }
     }
 
@@ -76,15 +92,6 @@ class MainViewModel @Inject constructor(
     }
 
     private fun addMessageToList(message: ChatMessage) {
-        _messages.value = _messages.value?.plus(message)
+        _messages.value = _messages.value?.plus(message) ?: listOf(message)
     }
 }
-
-// Create this data class (e.g., in data/model package)
-data class ChatMessage(
-    val id: String = java.util.UUID.randomUUID().toString(), // Simple unique ID
-    val text: String,
-    val isUser: Boolean, // True for user message, false for AI
-    val timestamp: Long,
-    val isError: Boolean = false // Optional: Flag for error messages
-)

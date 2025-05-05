@@ -2,7 +2,8 @@ package com.example.evav3.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.evav3.data.AppDatabase
+import com.example.evav3.data.AppDatabase // Correct import based on AppDatabase.kt package
+import com.example.evav3.data.dao.ConversationDao // <<< IMPORT ADDED
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,17 +21,16 @@ object DatabaseModule {
         return Room.databaseBuilder(
             context.applicationContext,
             AppDatabase::class.java,
-            "eva_database"
-        ).fallbackToDestructiveMigration() // Added fallback for simplicity during dev
+            "eva_database" // Database file name
+        ).fallbackToDestructiveMigration() // Consider removing for production
             .build()
     }
 
-    // REMOVE THIS ENTIRE FUNCTION:
-    /*
+    // --- FUNCTION UNCOMMENTED ---
     @Provides
-    @Singleton // Providing the DAO explicitly is usually not needed when injecting it directly
+    @Singleton // Providing the DAO explicitly
     fun provideConversationDao(database: AppDatabase): ConversationDao {
         return database.conversationDao()
     }
-    */
+    // --- END OF UNCOMMENT ---
 }

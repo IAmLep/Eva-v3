@@ -1,28 +1,25 @@
 package com.example.evav3.network
 
-import com.example.evav3.data.model.ChatRequest
-import com.example.evav3.data.model.ChatResponse
+// Import the DTOs from data.remote.dto
+import com.example.evav3.data.remote.dto.ConversationRequest
+import com.example.evav3.data.remote.dto.ConversationResponse
+import retrofit2.Response // Keep using Retrofit's Response wrapper if your API might return non-2xx codes with a body
 import retrofit2.http.Body
 import retrofit2.http.POST
 
 /**
- * Defines the network API endpoints for the application using Retrofit annotations.
+ * Defines the network API endpoints using DTOs from data.remote.dto.
  */
 interface ApiService {
 
     /**
-     * Sends a chat message to the backend.
-     * Corresponds to the POST request expected by ChatRepositoryImpl.
-     * @param request The ChatRequest object containing the message.
-     * @return The ChatResponse object from the backend.
+     * Sends a chat message to the backend using ConversationRequest DTO.
+     * @param request The ConversationRequest object containing the message and optional session ID.
+     * @return A Retrofit Response wrapping the ConversationResponse DTO from the backend.
      */
-    @POST("chat") // *** IMPORTANT: Replace "chat" with the actual relative path of your chat API endpoint ***
-    suspend fun sendMessage(@Body request: ChatRequest): ChatResponse
+    // Ensure this path ("/chat" or "/api/v1/conversation/") matches your backend endpoint for this call.
+    @POST("chat") // <<< Or use "/api/v1/conversation/" if that's correct
+    suspend fun sendMessage(@Body request: ConversationRequest): Response<ConversationResponse> // <<< Use Response<DTO>
 
-    // Add definitions for other API calls here, e.g.:
-    // @GET("conversations/{id}")
-    // suspend fun getConversation(@Path("id") conversationId: String): ConversationDto
-    //
-    // @POST("login")
-    // suspend fun login(@Body loginRequest: LoginRequest): AuthResponse
+    // Add other API calls here using appropriate DTOs
 }

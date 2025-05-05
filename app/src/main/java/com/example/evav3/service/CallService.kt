@@ -11,13 +11,14 @@ import androidx.core.app.NotificationCompat
 import com.example.evav3.R
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
+import com.example.evav3.util.PrefsHelper
 
 class CallService : Service() {
 
     companion object {
-        const val CHANNEL_ID       = "call_foreground"
-        const val NOTIF_ID         = 1001
-        const val ACTION_END_CALL  = "com.example.evav3.ACTION_END_CALL"
+        const val CHANNEL_ID = "call_foreground"
+        const val NOTIF_ID = 1001
+        const val ACTION_END_CALL = "com.example.evav3.ACTION_END_CALL"
         const val EXTRA_SESSION_ID = "extra_session_id"
     }
 
@@ -48,7 +49,6 @@ class CallService : Service() {
                 return START_NOT_STICKY
             }
             else -> {
-                // Starting call
                 sessionId = intent?.getStringExtra(EXTRA_SESSION_ID)
                 startCall()
             }
@@ -61,7 +61,6 @@ class CallService : Service() {
         PrefsHelper.setCallActive(this, true)
         sessionId?.let { PrefsHelper.setActiveSession(this, it) }
 
-        // build persistent notification
         val endIntent = Intent(this, CallService::class.java).apply {
             action = ACTION_END_CALL
         }
@@ -70,18 +69,15 @@ class CallService : Service() {
         )
 
         notification = NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_call)
+            .setSmallIcon(R.drawable.ic_call_widget_icon)
             .setContentTitle("EVA Call Active")
             .setContentText("00:00")
             .setOngoing(true)
-            .addAction(R.drawable.ic_end_call, "End", endPending)
+            .addAction(com.google.android.material.R.drawable.mtrl_checkbox_button_icon, "End", endPending)
             .build()
 
         startForeground(NOTIF_ID, notification)
         startTimer()
-
-        // TODO: open streaming API, write transcript to Firestore:
-        // val db = FirebaseFirestore.getInstance()
     }
 
     private fun startTimer() {
@@ -93,7 +89,7 @@ class CallService : Service() {
                     val seconds = (elapsed / 1000) % 60
                     val text = String.format("%02d:%02d", minutes, seconds)
                     notification = NotificationCompat.Builder(this@CallService, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.ic_call)
+                        .setSmallIcon(R.drawable.ic_call_widget_icon)
                         .setContentTitle("EVA Call Active")
                         .setContentText(text)
                         .setOngoing(true)
@@ -106,7 +102,6 @@ class CallService : Service() {
 
     fun toggleMute(): Boolean {
         isMuted = !isMuted
-        // TODO: actually mute/unmute microphone stream
         return isMuted
     }
 

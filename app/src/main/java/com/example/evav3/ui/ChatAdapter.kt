@@ -3,14 +3,17 @@ package com.example.evav3.ui // Or adapter package
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.FrameLayout // Use FrameLayout.LayoutParams for gravity
+import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.evav3.R
-import com.example.evav3.data.model.ChatMessage
-import com.example.evav3.databinding.ItemChatMessageBinding // Import ViewBinding class
+// Import the correct ChatMessage model
+import com.example.evav3.model.ChatMessage // <<< IMPORT CORRECT ChatMessage
+import com.example.evav3.databinding.ItemChatMessageBinding
+import java.text.DateFormat // For timestamp formatting if needed
+import java.util.Date // For timestamp formatting if needed
 
 class ChatAdapter : ListAdapter<ChatMessage, ChatAdapter.MessageViewHolder>(MessageDiffCallback()) {
 
@@ -27,51 +30,50 @@ class ChatAdapter : ListAdapter<ChatMessage, ChatAdapter.MessageViewHolder>(Mess
         fun bind(chatMessage: ChatMessage) {
             binding.messageTextView.text = chatMessage.text
 
-            // Adjust appearance based on whether it's a user or AI message
             val context = binding.root.context
-            val messageLayoutParams = binding.messageTextView.layoutParams as FrameLayout.LayoutParams // Use FrameLayout or LinearLayout params
+            val messageLayoutParams = binding.messageTextView.layoutParams as FrameLayout.LayoutParams
 
-            if (chatMessage.isUser) {
-                // User message: Align right, different background
+            // Use the field name from model/ChatMessage.kt
+            if (chatMessage.isSentByUser) { // <<< USE isSentByUser
+                // User message
                 messageLayoutParams.gravity = Gravity.END
                 binding.messageTextView.background = ContextCompat.getDrawable(context, R.drawable.message_bubble_background_user)
-                binding.messageTextView.setTextColor(ContextCompat.getColor(context, android.R.color.black)) // Or specific color
+                binding.messageTextView.setTextColor(ContextCompat.getColor(context, android.R.color.black))
             } else {
-                // AI message: Align left, different background
+                // AI message
                 messageLayoutParams.gravity = Gravity.START
                 binding.messageTextView.background = ContextCompat.getDrawable(context, R.drawable.message_bubble_background_ai)
-                binding.messageTextView.setTextColor(ContextCompat.getColor(context, android.R.color.black)) // Or specific color
+                binding.messageTextView.setTextColor(ContextCompat.getColor(context, android.R.color.black))
 
-                // Optional: Handle error message styling
-                if (chatMessage.isError) {
-                    binding.messageTextView.setTextColor(ContextCompat.getColor(context, android.R.color.holo_red_dark))
-                    // You could also change the background for errors
-                }
+                // Optional: Handle error message styling if ChatMessage has isError flag
+                // if (chatMessage.isError) {
+                //     binding.messageTextView.setTextColor(ContextCompat.getColor(context, android.R.color.holo_red_dark))
+                // }
             }
-            binding.messageTextView.layoutParams = messageLayoutParams // Re-apply layout params
+            binding.messageTextView.layoutParams = messageLayoutParams
 
-            // Optional: Bind timestamp if you added the TextView
+            // Optional: Bind timestamp if you add a TextView for it
             // binding.timestampTextView.text = formatTimestamp(chatMessage.timestamp)
             // val timestampLayoutParams = binding.timestampTextView.layoutParams as FrameLayout.LayoutParams
-            // timestampLayoutParams.gravity = messageLayoutParams.gravity // Align timestamp too
+            // timestampLayoutParams.gravity = messageLayoutParams.gravity
             // binding.timestampTextView.layoutParams = timestampLayoutParams
         }
     }
 
     // Optional: Timestamp formatting function
-    /*
-    private fun formatTimestamp(timestamp: Long): String {
-        // Implement your desired timestamp formatting logic here
-        // Example: return SimpleDateFormat("h:mm a", Locale.getDefault()).format(Date(timestamp))
-        return android.text.format.DateFormat.getTimeFormat(itemView.context).format(Date(timestamp))
+    private fun formatTimestamp(timestamp: Date): String {
+        return try {
+            DateFormat.getTimeInstance(DateFormat.SHORT).format(timestamp)
+        } catch (e: Exception) {
+            timestamp.toString() // Fallback
+        }
     }
-    */
 }
 
-// DiffUtil for efficient list updates
+// DiffUtil using the correct ChatMessage model
 class MessageDiffCallback : DiffUtil.ItemCallback<ChatMessage>() {
     override fun areItemsTheSame(oldItem: ChatMessage, newItem: ChatMessage): Boolean {
-        return oldItem.id == newItem.id // Use unique ID
+        return oldItem.id == newItem.id // Use unique ID from model
     }
 
     override fun areContentsTheSame(oldItem: ChatMessage, newItem: ChatMessage): Boolean {
